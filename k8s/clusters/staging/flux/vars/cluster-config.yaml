@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: flux-system
+  name: apply-cluster-config
+data:
+  CLUSTER_NAME: staging
+  CLUSTER_ID: "0"
+  CLUSTER_CERT: "letsencrypt-production"
+
+  TZ: Australia/Melbourne
+
+  LB_RANGE: "192.168.1.50-192.168.1.75"
+  LB_NGINX_INGRESS: "192.168.1.51"
+  EXTERNAL_DOMAIN: "192.168.1.51.nip.io"

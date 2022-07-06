@@ -4,3 +4,7 @@ namespace: flux-system
 resources:
   - bitnami.yaml
   - podinfo.yaml
+  - banzaicloud.yaml
+  - k8-at-home.yaml
+  - appuio.yaml
+  - external-secrets.yaml

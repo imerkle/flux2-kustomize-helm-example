@@ -1,0 +1,6 @@
+---
+creation_rules:
+  #  - path_regex: (global|clusters|manifests|talos)/.*\.sops\.ya?ml
+  - encrypted_regex: "((?i)(pass|secret($|[^N])|key|token|^data$|^stringData))"
+    age: >-
+      age1r3yhxz3wdwaut5dnfqc25g7u7xd6k53dfc8fcykaj09vru7ldgwsytc5u9

@@ -4,3 +4,7 @@ resources:
   - sources
   - nginx
   - redis
+  - vault
+  - external-secrets
+  - minio
+  - k8up

@@ -1,0 +1,115 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: velero
+  namespace: velero
+spec:
+  interval: 5m
+  chart:
+    spec:
+      # renovate: registryUrl=https://vmware-tanzu.github.io/helm-charts
+      chart: velero
+      version: 2.30.2
+      sourceRef:
+        kind: HelmRepository
+        name: vmware-tanzu-charts
+        namespace: flux-system
+      interval: 5m
+  install:
+    crds: Create
+  upgrade:
+    crds: CreateReplace
+  values:
+    image:
+      repository: velero/velero
+      tag: v1.9.0
+    configuration:
+      provider: aws
+      backupStorageLocation:
+        name: default
+        bucket: velero
+        config:
+          region: us-east-1
+          s3ForcePathStyle: true
+          s3Url: http://minio.minio:9000
+          publicUrl: http://minio-api.192.168.1.50.nip.io
+      volumeSnapshotLocation:
+        name: aws
+        config:
+          region: us-east-1
+      resticTimeout: 6h
+    initContainers:
+      - name: velero-plugin-for-aws
+        image: velero/velero-plugin-for-aws:v1.5.0
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+          - mountPath: /target
+            name: plugins
+    resources:
+      requests:
+        memory: 300Mi
+        cpu: 25m
+      limits:
+        memory: 1500Mi
+    # tolerations:
+    # - key: "arm"
+    #   operator: "Exists"
+    # enableHelmHooks: false
+    metrics:
+      enabled: true
+      serviceMonitor:
+        enabled: true
+    snapshotsEnabled: true
+    deployRestic: true
+    upgradeCRDs: false
+    restic:
+      podVolumePath: /var/lib/kubelet/pods
+      privileged: false
+      tolerations:
+        - key: "arm"
+          operator: "Exists"
+        - key: "node-role.kubernetes.io/master"
+          operator: "Exists"
+      resources:
+        requests:
+          memory: 200Mi
+          cpu: 15m
+        limits:
+          memory: 3000Mi
+          cpu: null
+    credentials:
+      # Whether a secret should be used. Set to false if, for examples:
+      # - using kube2iam or kiam to provide AWS IAM credentials instead of providing the key file. (AWS only)
+      # - using workload identity instead of providing the key file. (GCP only)
+      useSecret: true
+      # Name of the secret to create if `useSecret` is true and `existingSecret` is empty
+      name: velero-sec
+      # Name of a pre-existing secret (if any) in the Velero namespace
+      # that should be used to get IAM account credentials. Optional.
+      existingSecret:
+      # Data to be stored in the Velero secret, if `useSecret` is true and `existingSecret` is empty.
+      # As of the current Velero release, Velero only uses one secret key/value at a time.
+      # The key must be named `cloud`, and the value corresponds to the entire content of your IAM credentials file.
+      # Note that the format will be different for different providers, please check their documentation.
+      # Here is a list of documentation for plugins maintained by the Velero team:
+      # [AWS] https://github.com/vmware-tanzu/velero-plugin-for-aws/blob/main/README.md
+      # [GCP] https://github.com/vmware-tanzu/velero-plugin-for-gcp/blob/main/README.md
+      # [Azure] https://github.com/vmware-tanzu/velero-plugin-for-microsoft-azure/blob/main/README.md
+      secretContents:
+        cloud: |
+          [default]
+          aws_access_key_id=admin
+          aws_secret_access_key=xg9sHLDf1O
+      # additional key/value pairs to be used as environment variables such as "DIGITALOCEAN_TOKEN: <your-key>". Values will be stored in the secret.
+      extraEnvVars: {}
+      # Name of a pre-existing secret (if any) in the Velero namespace
+      # that will be used to load environment variables into velero and restic.
+      # Secret should be in format - https://kubernetes.io/docs/concepts/configuration/secret/#use-case-as-container-environment-variables
+      extraSecretRef: ""
+
+    schedules:
+      daily-backup:
+        schedule: "0 0 * * *"
+        template:
+          ttl: "120h"

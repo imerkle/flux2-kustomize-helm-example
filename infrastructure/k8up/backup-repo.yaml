@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: backup-repo
+type: Opaque
+stringData:
+  password: p@ssw0rd
