@@ -9,3 +9,4 @@ resources:
   - ./longhorn-system.yaml
   - ./minio.yaml
   - ./velero.yaml
+  - ./home.yaml
