@@ -11,3 +11,4 @@ resources:
   - ./kubernetes-sigs-metrics-server-charts.yaml
   - ./longhorn-charts.yaml
   - ./vmware-tanzu-charts.yaml
+  - ./hajimari-charts.yaml
