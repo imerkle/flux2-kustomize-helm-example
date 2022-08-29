@@ -30,6 +30,10 @@ spec:
       enabled: true
       ingressClassName: "nginx"
       hostname: &host "minio.${SECRET_DOMAIN}"
+      annotations:
+        hajimari.io/enable: "true"
+        hajimari.io/appName: minio
+        hajimari.io/icon: lan
     apiIngress:
       enabled: true
       ingressClassName: "nginx"
