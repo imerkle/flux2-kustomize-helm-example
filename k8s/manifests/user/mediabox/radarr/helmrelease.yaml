@@ -45,6 +45,7 @@ spec:
           #   sub_filter_once on;
           # external-dns/is-public: "false"
           hajimari.io/enable: "true"
+          hajimari.io/appName: radarr
           hajimari.io/icon: "filmstrip"
         hosts:
           - host: &host "radarr.192.168.1.50.nip.io"
