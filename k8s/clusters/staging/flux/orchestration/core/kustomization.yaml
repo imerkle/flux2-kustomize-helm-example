@@ -7,4 +7,5 @@ resources:
   #- ./rook-ceph.yaml
   - ./longhorn.yaml
   - ./minio.yaml
-  - ./velero.yaml
+  #  - ./velero.yaml
+  - ./kasten.yaml

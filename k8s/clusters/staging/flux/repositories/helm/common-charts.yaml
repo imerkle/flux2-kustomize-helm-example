@@ -1,0 +1,70 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: bitnami
+  namespace: flux-system
+spec:
+  interval: 30m
+  url: https://charts.bitnami.com/bitnami
+  timeout: 3m
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: ingress-nginx-charts
+  namespace: flux-system
+spec:
+  interval: 30m
+  url: https://kubernetes.github.io/ingress-nginx
+  timeout: 3m
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: k8s-at-home-charts
+  namespace: flux-system
+spec:
+  interval: 30m
+  url: https://k8s-at-home.com/charts/
+  timeout: 3m
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: kubernetes-sigs-metrics-server-charts
+  namespace: flux-system
+spec:
+  interval: 30m
+  url: https://kubernetes-sigs.github.io/metrics-server/
+  timeout: 3m
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: longhorn-charts
+  namespace: flux-system
+spec:
+  interval: 30m
+  url: https://charts.longhorn.io
+  timeout: 3m
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: metallb
+  namespace: flux-system
+spec:
+  interval: 10m
+  url: https://metallb.github.io/metallb
+  timeout: 3m
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: kasten-charts
+  namespace: flux-system
+spec:
+  interval: 10m
+  url: https://charts.kasten.io/
+  timeout: 3m
