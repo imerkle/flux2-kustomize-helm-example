@@ -27,9 +27,9 @@ spec:
     auth:
       k10AdminUsers:
         - ryan@ryanholt.net
-    basicAuth:
-      enabled: true
-      htpasswd: "123"
+      basicAuth:
+        enabled: true
+        htpasswd: "123"
       # oidcAuth:
       #   enabled: true
       #   secretName: kasten-secret
