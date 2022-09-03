@@ -8,4 +8,4 @@ resources:
   - ./longhorn.yaml
   - ./minio.yaml
   #  - ./velero.yaml
-  - ./kasten.yaml
+#  - ./kasten.yaml
