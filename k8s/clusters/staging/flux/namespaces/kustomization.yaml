@@ -10,4 +10,4 @@ resources:
   - ./minio.yaml
   - ./velero.yaml
   - ./home.yaml
-  - ./kasten-io.yaml
+  - ./cert-manager.yaml
