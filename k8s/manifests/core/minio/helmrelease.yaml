@@ -40,5 +40,7 @@ spec:
       enabled: true
       ingressClassName: "nginx"
       hostname: &host "minio-api.${SECRET_DOMAIN}"
+      annotations:
+        cert-manager.io/cluster-issuer: ${CLUSTER_CERT}
       tls: true
   #AWS_CERT: your base64 encoded custom CA certificate goes here
