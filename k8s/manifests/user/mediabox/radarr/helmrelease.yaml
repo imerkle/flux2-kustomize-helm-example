@@ -38,7 +38,7 @@ spec:
         enabled: true
         ingressClassName: "nginx"
         annotations:
-          # cert-manager.io/cluster-issuer: ${CLUSTER_CERT}
+          cert-manager.io/cluster-issuer: ${CLUSTER_CERT}
           # nginx.ingress.kubernetes.io/configuration-snippet: |
           #   proxy_set_header Accept-Encoding "";
           #   sub_filter '</head>' '<link rel="stylesheet" type="text/css" href="https://theme-park.192.168.1.50.nip.io/css/base/radarr/plex.css"></head>';
@@ -52,10 +52,10 @@ spec:
             paths:
               - path: /
                 pathType: Prefix
-        # tls:
-        #   - hosts:
-        #       - *host
-        #     secretName: &tls tls.radarr
+            tls:
+              - hosts:
+                  - *host
+                secretName: &tls tls.radarr
 
       api:
         enabled: true
