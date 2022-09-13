@@ -23,3 +23,10 @@ spec:
       retries: 5
       remediateLastFailure: true # remediate the last failure, when no retries remain
     cleanupOnFail: true
+  ingress:
+    enabled: true
+    ingressClassName: "nginx"
+    hostname: &host "longhorn.${SECRET_DOMAIN}"
+    annotations:
+      cert-manager.io/cluster-issuer: ${CLUSTER_CERT}
+    tls: true
