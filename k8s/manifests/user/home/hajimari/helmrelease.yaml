@@ -94,10 +94,10 @@ spec:
         enabled: true
         ingressClassName: "nginx"
         annotations:
-          #          cert-manager.io/cluster-issuer: ${CLUSTER_CERT}
-          external-dns/is-public: "false"
-          prometheus.io/probe: "true"
-          prometheus.io/protocol: http
+          cert-manager.io/cluster-issuer: ${CLUSTER_CERT}
+          external-dns/is-public: "true"
+          # prometheus.io/probe: "true"
+          # prometheus.io/protocol: http
 
         hosts:
           - host: "hajimari.${SECRET_DOMAIN}"
