@@ -31,6 +31,6 @@ spec:
       enabled: true
       ingressClassName: "nginx"
       host: "longhorn.${SECRET_DOMAIN}"
-      annotations:
-        cert-manager.io/cluster-issuer: ${CLUSTER_CERT}
+      # annotations:
+      # cert-manager.io/cluster-issuer: ${CLUSTER_CERT}
       tls: true

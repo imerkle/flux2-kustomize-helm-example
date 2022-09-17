@@ -31,7 +31,7 @@ spec:
       ingressClassName: "nginx"
       hostname: &host "minio.${SECRET_DOMAIN}"
       annotations:
-        cert-manager.io/cluster-issuer: ${CLUSTER_CERT}
+        # cert-manager.io/cluster-issuer: ${CLUSTER_CERT}
         hajimari.io/enable: "true"
         hajimari.io/appName: minio
         hajimari.io/icon: lan
@@ -40,7 +40,7 @@ spec:
       enabled: true
       ingressClassName: "nginx"
       hostname: &host "minio-api.${SECRET_DOMAIN}"
-      annotations:
-        cert-manager.io/cluster-issuer: ${CLUSTER_CERT}
+      # annotations:
+      # cert-manager.io/cluster-issuer: ${CLUSTER_CERT}
       tls: true
   #AWS_CERT: your base64 encoded custom CA certificate goes here
