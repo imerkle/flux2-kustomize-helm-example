@@ -99,16 +99,16 @@ spec:
           # prometheus.io/probe: "true"
           # prometheus.io/protocol: http
 
-        # hosts:
-        #   - host: "hajimari.${SECRET_DOMAIN}"
-        #     paths:
-        #       - path: /
-        #         pathType: Prefix
+        hosts:
+          - host: "hajimari.${SECRET_DOMAIN}"
+            paths:
+              - path: /
+                pathType: Prefix
 
-        # tls:
-        #   - secretName: tls.hajimari
-        #     hosts:
-        #       - "hajimari.${SECRET_DOMAIN}"
+        tls:
+          - secretName: tls.hajimari
+            hosts:
+              - "hajimari.${SECRET_DOMAIN}"
 
     persistence:
       data:
