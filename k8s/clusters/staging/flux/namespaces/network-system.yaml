@@ -5,3 +5,10 @@ metadata:
   name: network-system
   labels:
     goldilocks.fairwinds.com/enabled: "true"
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: cloudflared
+  labels:
+    goldilocks.fairwinds.com/enabled: "true"
