@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - cloudflare-secret.sops.yaml
   - helmrelease.yaml
+  - ktunnel.yaml
