@@ -5,10 +5,12 @@ metadata:
   namespace: minio
 spec:
   rules:
-    - https:
+    - http:
         paths:
-          - backend:
+          - pathType: Prefix
+            path: "/"
+            backend:
               service:
                 name: minio
                 port:
-                  name: 9000
+                  number: 9000
