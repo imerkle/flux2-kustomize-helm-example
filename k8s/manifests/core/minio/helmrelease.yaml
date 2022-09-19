@@ -27,7 +27,7 @@ spec:
     auth:
       rootPassword: "xg9sHLDf1O"
     ingress:
-      enabled: true
+      enabled: false
       ingressClassName: "nginx"
       hostname: &host "minio.${SECRET_DOMAIN}"
       annotations:
