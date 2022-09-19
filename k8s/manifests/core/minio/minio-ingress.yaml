@@ -14,3 +14,4 @@ spec:
                 name: minio
                 port:
                   number: 9000
+      host: "minio.${SECRET_DOMAIN}"
