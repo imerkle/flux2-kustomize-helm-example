@@ -10,3 +10,4 @@ resources:
   #  - ./velero.yaml
   #  - ./kasten.yaml
   - ./cert-manager.yaml
+  - ./cloudflared.yaml
