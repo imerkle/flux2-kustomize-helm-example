@@ -21,5 +21,6 @@ spec:
       - --metrics
       - localhost:9090
       - run
+      - sample-tunnel
   tokenSecretName: sample-tunnel
   replicas: 1
