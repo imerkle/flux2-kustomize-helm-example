@@ -1,0 +1,25 @@
+apiVersion: cloudflare-tunnel-operator.beezlabs.app/v1alpha1
+kind: CloudflareTunnel
+metadata:
+  name: sample-tunnel
+  namespace: cloudflared
+spec:
+  domain: "*.${SECRET_DOMAIN}"
+  zone: "${SECRET_DOMAIN}"
+  service:
+    name: ingress-nginx-controller
+    namespace: network-system
+    protocol: https
+    port: 443
+  container:
+    image: cloudflare/cloudflared:latest
+    imagePullPolicy: Always
+    command:
+      - cloudflared
+    args:
+      - tunnel
+      - --metrics
+      - localhost:9090
+      - run
+  tokenSecretName: sample-tunnel
+  replicas: 1

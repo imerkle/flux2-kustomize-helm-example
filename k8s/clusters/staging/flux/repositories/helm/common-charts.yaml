@@ -88,3 +88,13 @@ spec:
   interval: 30m
   url: https://khuedoan.github.io/charts
   timeout: 3m
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: beezlabs-charts
+  namespace: flux-system
+spec:
+  interval: 30m
+  url: https://charts.beezlabs.app/
+  timeout: 3m
