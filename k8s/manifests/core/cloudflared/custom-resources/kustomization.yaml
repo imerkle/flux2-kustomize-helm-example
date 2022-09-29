@@ -4,3 +4,4 @@ kind: Kustomization
 namespace: cloudflared
 resources:
   - tunnel.yaml
+  - tunnelr.yaml
