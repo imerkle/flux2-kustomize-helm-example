@@ -16,21 +16,3 @@ spec:
     provider: sops
     secretRef:
       name: sops-age
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
-kind: Kustomization
-metadata:
-  name: core-cloudflared-cr
-  namespace: flux-system
-spec:
-  dependsOn:
-    - name: core-cloudflared
-  interval: 5m
-  path: "./k8s/manifests/core/cloudflared/custom-resources"
-  prune: true
-  wait: true
-  sourceRef:
-    kind: GitRepository
-    name: home-cluster
----
-
