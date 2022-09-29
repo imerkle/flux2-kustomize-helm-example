@@ -2,6 +2,7 @@ apiVersion: networking.cfargotunnel.com/v1alpha1
 kind: ClusterTunnel
 metadata:
   name: k3s-cluster-tunnel # The ClusterTunnel Custom Resource Name
+  namespace: cloudflared
 spec:
   newTunnel:
     name: my-k8s-tunnel # Name of your new tunnel on Cloudflare
