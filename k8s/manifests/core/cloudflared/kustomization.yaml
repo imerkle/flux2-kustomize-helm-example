@@ -6,3 +6,4 @@ resources:
   # - helmrelease.yaml
   # - ktunnel.yaml
   - tunnelr.yaml
+  - https://github.com/adyanth/cloudflare-operator/config/default
