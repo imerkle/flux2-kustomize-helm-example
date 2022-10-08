@@ -13,7 +13,5 @@ spec:
     secret: sample-tunnel # The secret created before
     # accountId and accountName cannot be both empty. If both are provided, Account ID is used if valid, else falls back to Account Name.
     #    accountName: <Cloudflare account name>
-    accountId: "d4ecb65c48cd4a627c11099c8d9c9fb7"
-    accountName: "slim475962"
-    CLOUDFLARE_API_TOKEN: token
-    CLOUDFLARE_API_KEY: global
+    accountId: d4ecb65c48cd4a627c11099c8d9c9fb7
+    accountName: slim475962
