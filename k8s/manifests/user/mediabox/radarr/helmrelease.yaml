@@ -31,6 +31,12 @@ spec:
 
     env:
       TZ: ${TZ}
+
+    service:
+      metadata:
+        annotations:
+          cfargotunnel.com/cluster-tunnel: k3s-cluster-tunnel
+
     podAnnotations:
       backup.velero.io/backup-volumes: config
     ingress:
