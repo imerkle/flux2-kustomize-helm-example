@@ -33,8 +33,9 @@ spec:
       TZ: ${TZ}
 
     service:
-      annotations:
-        cfargotunnel.com/cluster-tunnel: k3s-cluster-tunnel
+      main:
+        annotations:
+          cfargotunnel.com/cluster-tunnel: k3s-cluster-tunnel
 
     podAnnotations:
       backup.velero.io/backup-volumes: config
