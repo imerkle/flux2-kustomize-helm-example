@@ -32,6 +32,11 @@ spec:
     env:
       TZ: "${TZ}"
 
+    service:
+      main:
+        annotations:
+          cfargotunnel.com/cluster-tunnel: k3s-cluster-tunnel
+
     hajimari:
       defaultEnable: false
       namespaceSelector:
