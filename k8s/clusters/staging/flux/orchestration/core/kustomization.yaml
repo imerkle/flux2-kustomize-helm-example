@@ -11,3 +11,4 @@ resources:
   #  - ./kasten.yaml
   - ./cert-manager.yaml
   - ./cloudflared.yaml
+  - ./system-monitoring.yaml
