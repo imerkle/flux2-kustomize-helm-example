@@ -11,3 +11,4 @@ resources:
   - ./velero.yaml
   - ./home.yaml
   - ./cert-manager.yaml
+  - ./system-monitoring.yaml
