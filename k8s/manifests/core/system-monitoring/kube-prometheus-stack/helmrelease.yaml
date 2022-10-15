@@ -76,7 +76,7 @@ spec:
           # memory: 32M
 
     grafana:
-      enabled: false
+      enabled: true
       forceDeployDashboards: true
       sidecar:
         dashboards:
