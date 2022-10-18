@@ -121,24 +121,24 @@ spec:
       limits:
         memory: 974M
 
-    # prometheus:
-    #   podMonitor:
-    #     enabled: true
-    #     interval: 3m
-    #     scrapeTimeout: 1m30s
+    prometheus:
+      podMonitor:
+        enabled: true
+        interval: 3m
+        scrapeTimeout: 1m30s
 
-    # metrics:
-    #   enabled: true
-    #   serviceMonitor:
-    #     interval: 3m
-    #     scrapeTimeout: 1m
-    #   prometheusRule:
-    #     enabled: true
-    #   exporter:
-    #     image:
-    #       repository: ghcr.io/onedr0p/exportarr
-    #       tag: v1.1.0
-    #     env:
-    #       port: 9794
-    #       additionalMetrics: true
-    #       unknownQueueItems: false
+    metrics:
+      enabled: true
+      serviceMonitor:
+        interval: 3m
+        scrapeTimeout: 1m
+      prometheusRule:
+        enabled: true
+      exporter:
+        image:
+          repository: ghcr.io/onedr0p/exportarr
+          tag: v1.1.0
+        env:
+          port: 9794
+          additionalMetrics: true
+          unknownQueueItems: false
