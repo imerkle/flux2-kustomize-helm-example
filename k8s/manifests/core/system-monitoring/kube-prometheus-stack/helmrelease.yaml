@@ -114,6 +114,9 @@ spec:
               - source_labels: [__meta_kubernetes_pod_name]
                 action: replace
                 target_label: pod
+              - source_labels: [__meta_kubernetes_endpoints_port_name]
+                action: replace
+                target_label: metrics
             # - source_labels: [__address__]
             #   action: replace
             #   regex: ([^:]+)(?::\d+)?
