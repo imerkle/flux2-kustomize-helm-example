@@ -103,20 +103,11 @@ spec:
           - job_name: your_job_name
             scrape_interval: 15s
             kubernetes_sd_configs:
-              - role: pod
-                namespaces:
-                  names:
-                    - mediabox
+              - role: service
             relabel_configs:
-              - source_labels: [__meta_kubernetes_namespace]
-                action: replace
-                target_label: namespace
-              - source_labels: [__meta_kubernetes_pod_name]
-                action: replace
-                target_label: pod
-              - source_labels: [__meta_kubernetes_endpoints_port_name]
-                action: replace
-                target_label: metrics
+              - source_labels: [__meta_kubernetes_service_port_name]
+                action: keep
+                regex: metrics
             # - source_labels: [__address__]
             #   action: replace
             #   regex: ([^:]+)(?::\d+)?
