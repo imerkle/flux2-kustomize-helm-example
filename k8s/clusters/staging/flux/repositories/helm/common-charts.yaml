@@ -108,3 +108,13 @@ spec:
   interval: 30m
   url: https://prometheus-community.github.io/helm-charts
   timeout: 3m
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: truecharts
+  namespace: flux-system
+spec:
+  interval: 30m
+  url: https://charts.truecharts.org/
+  timeout: 3m
