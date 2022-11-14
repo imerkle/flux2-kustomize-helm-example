@@ -85,6 +85,9 @@ spec:
       config:
         enabled: true
         existingClaim: radarr-config-v1
+      media:
+        enabled: true
+        existingClaim: radarr-media-v1
 
       # nfs-nas-media:
       #   enabled: true

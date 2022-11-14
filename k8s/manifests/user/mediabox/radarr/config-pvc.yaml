@@ -4,8 +4,6 @@ kind: PersistentVolumeClaim
 metadata:
   name: radarr-config-v1
   namespace: mediabox
-  labels:
-    kasten.io/backup-volume: "enabled"
 spec:
   accessModes:
     - ReadWriteOnce
@@ -15,4 +13,17 @@ spec:
       storage: 15Gi
 
   #  storageClassName: ceph-block
+  storageClassName: longhorn
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: radarr-media-v1
+  namespace: mediabox
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 15Gi
   storageClassName: longhorn

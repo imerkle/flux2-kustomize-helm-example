@@ -108,11 +108,3 @@ spec:
               - source_labels: [__meta_kubernetes_service_port_name]
                 action: keep
                 regex: metrics
-            # - source_labels: [__address__]
-            #   action: replace
-            #   regex: ([^:]+)(?::\d+)?
-            #   replacement: ${1}:your_port
-            #   target_label: __address__
-            # - source_labels: [__meta_kubernetes_pod_label_app]
-            #   action: keep
-            #   regex: your_pod_name
