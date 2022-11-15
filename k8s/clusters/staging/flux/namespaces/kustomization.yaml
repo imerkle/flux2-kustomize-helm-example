@@ -12,3 +12,4 @@ resources:
   - ./home.yaml
   - ./cert-manager.yaml
   - ./system-monitoring.yaml
+  - ./dex.yaml
