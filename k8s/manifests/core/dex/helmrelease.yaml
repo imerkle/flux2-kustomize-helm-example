@@ -18,6 +18,9 @@ spec:
   values:
     config:
       issuer: "https://dex.${SECRET_DOMAIN}"
+      enablePasswordDB: true
+      storage:
+        type: memory
     service:
       annotations:
         cfargotunnel.com/cluster-tunnel: k3s-cluster-tunnel
