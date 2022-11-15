@@ -28,3 +28,5 @@ spec:
     persistence:
       data:
         size: 5Gi
+    postgresql:
+      size: 5Gi
