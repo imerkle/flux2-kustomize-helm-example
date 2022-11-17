@@ -23,15 +23,12 @@ spec:
         type: memory
       oauth2:
         skipApprovalScreen: true
-      connectors:
-        - type: oidc
-          id: kubeapps
-          name: kubeapps
-          config:
-            clientID: $GITEA_CLIENT_ID
-            clientSecret: $GITEA_CLIENT_SECRET
-            redirectURI: "https://dex.${SECRET_DOMAIN}/callback"
-            baseURL: "https://kubeapps.${SECRET_DOMAIN}"
+      staticClients:
+        - id: kubeapps-oauth2-proxy
+          redirectURIs:
+            - "https://kubeapps.${SECRET_DOMAIN}/oauth2/callback"
+          name: "Kubeapps on TKG test Login"
+          secret: "kubeappsClientSecret"
     service:
       annotations:
         cfargotunnel.com/cluster-tunnel: k3s-cluster-tunnel
