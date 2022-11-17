@@ -30,7 +30,7 @@ spec:
       provider: oidc
       clientID: kubeapps-oauth2-proxy
       clientSecret: "kubeappsClientSecret"
-      cookieSecret: "kubeappsClientSecret"
+      cookieSecret: "kubeapps"
       additionalFlags:
         - --oidc-issuer-url="https://dex.${SECRET_DOMAIN}"
         # IMPORTANT: We are overwriting the scope option to include the workload clusters' clientids in the audience.
