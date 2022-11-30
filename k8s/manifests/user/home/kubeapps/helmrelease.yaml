@@ -48,3 +48,7 @@ spec:
         cert-manager.io/cluster-issuer: ${CLUSTER_CERT}
       hostname: "kubeapps.${SECRET_DOMAIN}"
       tls: true
+    frontend:
+      service:
+        annotations:
+          cfargotunnel.com/cluster-tunnel: k3s-cluster-tunnel
