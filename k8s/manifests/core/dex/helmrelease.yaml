@@ -27,7 +27,6 @@ spec:
         - id: kubeapps-oauth2-proxy
           redirectURIs:
             - "https://kubeapps.${SECRET_DOMAIN}/oauth2/callback"
-            - "http://kubeapps.${SECRET_DOMAIN}/oauth2/callback"
           name: "Kubeapps on TKG test Login"
           secret: "kubeappsClientSecret"
       staticPasswords:
