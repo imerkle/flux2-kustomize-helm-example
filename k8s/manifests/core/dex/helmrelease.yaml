@@ -24,10 +24,6 @@ spec:
       oauth2:
         skipApprovalScreen: true
       staticClients:
-        - id: second-oidc-cluster
-          trustedPeers:
-            - kubeapps-oauth2-proxy
-          name: "my-oidc-cluster"
         - id: kubeapps-oauth2-proxy
           redirectURIs:
             - "https://kubeapps.${SECRET_DOMAIN}/oauth2/callback"
