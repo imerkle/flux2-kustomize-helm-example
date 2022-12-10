@@ -36,11 +36,11 @@ spec:
         # IMPORTANT: We are overwriting the scope option to include the workload clusters' clientids in the audience.
         - --scope=openid email groups
         # TODO: Update to provide the dex ca via --provider-ca-file and mounting etc.
-        - --ssl-insecure-skip-verify=true
-        # Since Kubeapps is running without TLS, can't use secure cookies
-        - --cookie-secure=false
-        # If you need to access the actual token in the frontend for testing, uncomment the following.
-        # - --set-authorization-header=true
+      #  - --ssl-insecure-skip-verify=true
+      # Since Kubeapps is running without TLS, can't use secure cookies
+      #  - --cookie-secure=false
+      # If you need to access the actual token in the frontend for testing, uncomment the following.
+      # - --set-authorization-header=true
     ingress:
       enabled: true
       ingressClassName: "nginx"
