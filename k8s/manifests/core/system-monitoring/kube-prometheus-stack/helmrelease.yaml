@@ -86,7 +86,9 @@ spec:
       service:
         annotations:
           cfargotunnel.com/cluster-tunnel: k3s-cluster-tunnel
-      grafana.ini: |
+      grafana.ini:
+        server:
+          root_url: https://grafana.475962.xyz
         auth.generic_oauth:
           enabled: true
           allow_sign_up: true
