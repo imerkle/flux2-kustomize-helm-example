@@ -23,6 +23,8 @@ spec:
         type: memory
       oauth2:
         skipApprovalScreen: true
+      frontend:
+        proxypassAccessTokenAsBearer: true
       staticClients:
         - id: kubeapps-oauth2-proxy
           redirectURIs:
