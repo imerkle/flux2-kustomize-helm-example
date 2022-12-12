@@ -81,8 +81,12 @@ spec:
         ingressClassName: "nginx"
         annotations:
           cert-manager.io/cluster-issuer: ${CLUSTER_CERT}
-        hostname: "grafana.${SECRET_DOMAIN}"
-        tls: true
+        hosts:
+          - &host "grafana.${SECRET_DOMAIN}"
+        tls:
+          - secretName: grafana-general-tls
+            hosts:
+              - *host
       service:
         annotations:
           cfargotunnel.com/cluster-tunnel: k3s-cluster-tunnel
