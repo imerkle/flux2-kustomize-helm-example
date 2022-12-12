@@ -76,6 +76,29 @@ spec:
           # memory: 32M
 
     grafana:
+      ingress:
+        enabled: true
+        ingressClassName: "nginx"
+        annotations:
+          cert-manager.io/cluster-issuer: ${CLUSTER_CERT}
+        hostname: "grafana.${SECRET_DOMAIN}"
+        tls: true
+      service:
+        annotations:
+          cfargotunnel.com/cluster-tunnel: k3s-cluster-tunnel
+      grafana.ini: |
+        server:
+          root_url: https://grafana.475962.xyz
+        auth.generic_oauth:
+          enabled: true
+          allow_sign_up: true
+          name: Dex
+          client_id: grafana-sso
+          client_secret: "kubeappsClientSecret"
+          scopes: openid profile email groups
+          auth_url: https://dex.475962.xyz/auth
+          token_url: https://dex.475962.xyz/token
+          api_url: https://dex.475962.xyz/userinfo
       enabled: true
       forceDeployDashboards: true
       sidecar:

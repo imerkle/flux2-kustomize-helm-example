@@ -31,6 +31,11 @@ spec:
             - "https://kubeapps.${SECRET_DOMAIN}/oauth2/callback"
           name: "Kubeapps on TKG test Login"
           secret: "kubeappsClientSecret"
+        - id: grafana-sso
+          name: Grafana
+          redirectURIs:
+            - "https://grafana.${SECRET_DOMAIN}/login/generic_oauth"
+          secretEnv: "kubeappsClientSecret"
       staticPasswords:
         - email: "admin@example.com"
           # bcrypt hash of the string "password": $(echo password | htpasswd -BinC 10 admin | cut -d: -f2)
