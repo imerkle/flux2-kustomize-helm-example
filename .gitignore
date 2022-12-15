@@ -16,4 +16,5 @@ bin/
 cluster-secrets.yaml
 cloudflare-api-token-secret.yaml
 cloudflare-secret.yaml
+ts-secret.yaml
 age.agekey
