@@ -118,3 +118,13 @@ spec:
   interval: 30m
   url: https://charts.dexidp.io
   timeout: 3m
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: gtaylor
+  namespace: flux-system
+spec:
+  interval: 30m
+  url: https://gtaylor.github.io/helm-charts
+  timeout: 3m
