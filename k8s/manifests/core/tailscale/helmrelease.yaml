@@ -10,11 +10,11 @@ spec:
   timeout: 20m
   chart:
     spec:
-      chart: tailscale-subnet-router
-      version: 1.1.1
+      chart: tailscale-relay
+      version: 0.1.11
       sourceRef:
         kind: HelmRepository
-        name: gtaylor
+        name: mvisonneau
         namespace: flux-system
   install:
     createNamespace: true
@@ -28,7 +28,9 @@ spec:
       remediateLastFailure: true # remediate the last failure, when no retries remain
     cleanupOnFail: true
   values:
-    routes:
-      - "10.100.0.0/24"
-      - "10.101.0.0/24"
-      - "10.102.0.0/24"
+    config:
+      authKey: "tskey-auth-k2TSGD2CNTRL-WMy3A78prs6dWZF183KTw6fa878dV48Fb"
+      variables:
+        TAILSCALE_ADVERTISE_ROUTES:
+          - "10.96.0.0/12"
+          - "10.101.0.0/12"
