@@ -29,6 +29,6 @@ spec:
     cleanupOnFail: true
   values:
     config:
-      authKey: "tskey-auth-k2TSGD2CNTRL-WMy3A78prs6dWZF183KTw6fa878dV48Fb"
+      authKey: "tskey-auth-k9BWwj3CNTRL-nsSFKbkUK4LRGPBzucf9xKfXNLJ2xAGf"
       variables:
         TAILSCALE_ADVERTISE_ROUTES: "10.96.0.0/12"
