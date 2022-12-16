@@ -31,4 +31,4 @@ spec:
     config:
       authKey: "tskey-auth-k9BWwj3CNTRL-nsSFKbkUK4LRGPBzucf9xKfXNLJ2xAGf"
       variables:
-        TAILSCALE_ADVERTISE_ROUTES: "10.96.0.0/12"
+        TAILSCALE_ADVERTISE_ROUTES: "10.96.0.0/12,10.103.0.0/24"
