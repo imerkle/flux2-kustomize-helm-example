@@ -39,8 +39,8 @@ spec:
                   key: AUTH_KEY
             - name: TS_DEST_IP
               value: 10.103.31.241 #TODO: cluster ip of nginx ingress
-            # - name: TS_EXTRA_ARGS
-            #   value: --hostname=nutria
+            - name: TS_EXTRA_ARGS
+              value: --hostname=nutria
           resources:
             limits:
               cpu: 100m
