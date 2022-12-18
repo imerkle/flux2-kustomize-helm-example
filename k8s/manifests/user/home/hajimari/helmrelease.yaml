@@ -99,7 +99,7 @@ spec:
         enabled: true
         ingressClassName: "nginx"
         annotations:
-          cert-manager.io/cluster-issuer: ${CLUSTER_CERT}
+          # cert-manager.io/cluster-issuer: ${CLUSTER_CERT}
           external-dns/is-public: "true"
           external-dns.alpha.kubernetes.io/target: nutria.tail4c0a8.ts.net
           # prometheus.io/probe: "true"
@@ -111,10 +111,10 @@ spec:
               - path: /
                 pathType: Prefix
 
-        tls:
-          - secretName: tls.hajimari
-            hosts:
-              - "hajimari.homelab.${SECRET_DOMAIN}"
+        # tls:
+        #   - secretName: tls.hajimari
+        #     hosts:
+        #       - "hajimari.homelab.${SECRET_DOMAIN}"
 
     persistence:
       data:
