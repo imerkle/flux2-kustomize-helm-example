@@ -38,7 +38,7 @@ spec:
                   name: tailscale-subnet-router-secrets
                   key: AUTH_KEY
             - name: TS_DEST_IP
-              value: 10.103.31.241 #TODO: cluster ip of nginx ingress
+              value: 192.168.1.50 #TODO: cluster ip of nginx ingress
             - name: TS_EXTRA_ARGS
               value: --hostname=nutria
           resources:
