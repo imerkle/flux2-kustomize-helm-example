@@ -27,10 +27,10 @@ spec:
   values:
     env:
       TZ: ${TZ}
-    service:
-      main:
-        annotations:
-          cfargotunnel.com/cluster-tunnel: k3s-cluster-tunnel
+    # service:
+    #   main:
+    #     annotations:
+    #       cfargotunnel.com/cluster-tunnel: k3s-cluster-tunnel
     # podAnnotations:
     #   backup.velero.io/backup-volumes: config
     ingress:
@@ -43,12 +43,12 @@ spec:
           #   proxy_set_header Accept-Encoding "";
           #   sub_filter '</head>' '<link rel="stylesheet" type="text/css" href="https://theme-park.192.168.1.50.nip.io/css/base/radarr/plex.css"></head>';
           #   sub_filter_once on;
-          external-dns/is-public: "true"
+          #external-dns/is-public: "true"
           hajimari.io/enable: "true"
           hajimari.io/appName: radarr
           hajimari.io/icon: "filmstrip"
         hosts:
-          - host: &host "radarr.${SECRET_DOMAIN}"
+          - host: &host "radarr.homelab.${SECRET_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix
