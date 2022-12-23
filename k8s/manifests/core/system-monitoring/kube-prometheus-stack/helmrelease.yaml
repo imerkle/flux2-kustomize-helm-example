@@ -92,7 +92,7 @@ spec:
           cfargotunnel.com/cluster-tunnel: k3s-cluster-tunnel
       grafana.ini:
         server:
-          root_url: https://grafana.475962.xyz
+          root_url: "https://grafana.${SECRET_DOMAIN}"
         auth.generic_oauth:
           enabled: true
           allow_sign_up: true
@@ -100,8 +100,8 @@ spec:
           client_id: grafana-sso
           client_secret: "kubeappsClientSecret"
           scopes: openid profile email groups
-          auth_url: https://dex.475962.xyz/auth
-          token_url: https://dex.475962.xyz/token
+          auth_url: "https://dex.${SECRET_DOMAIN}/auth"
+          token_url: "https://dex.${SECRET_DOMAIN}/token"
           api_url: https://dex.475962.xyz/userinfo
       enabled: true
       forceDeployDashboards: true
