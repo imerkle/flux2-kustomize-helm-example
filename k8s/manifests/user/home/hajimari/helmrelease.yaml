@@ -114,7 +114,7 @@ spec:
         tls:
           - secretName: tls.hajimari
             hosts:
-              - "hajimari.homelab.${SECRET_DOMAIN}"
+              - "hajimari.${SECRET_DOMAIN}"
 
     persistence:
       data:
