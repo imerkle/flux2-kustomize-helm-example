@@ -32,7 +32,7 @@ spec:
       clientSecret: "kubeappsClientSecret"
       cookieSecret: "bm90LWdvb2Qtc2VjcmV0Cg=="
       extraFlags:
-        - --oidc-issuer-url=https://dex.475962.xyz
+        - --oidc-issuer-url="https://dex.${SECRET_DOMAIN}"
         # IMPORTANT: We are overwriting the scope option to include the workload clusters' clientids in the audience.
         - --scope=openid email groups
         # TODO: Update to provide the dex ca via --provider-ca-file and mounting etc.
@@ -48,7 +48,7 @@ spec:
         cert-manager.io/cluster-issuer: ${CLUSTER_CERT}
       hostname: "kubeapps.${SECRET_DOMAIN}"
       tls: true
-    frontend:
-      service:
-        annotations:
-          cfargotunnel.com/cluster-tunnel: k3s-cluster-tunnel
+    # frontend:
+    #   service:
+    #     annotations:
+    #       cfargotunnel.com/cluster-tunnel: k3s-cluster-tunnel
