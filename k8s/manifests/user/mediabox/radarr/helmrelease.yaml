@@ -48,7 +48,7 @@ spec:
           hajimari.io/appName: radarr
           hajimari.io/icon: "filmstrip"
         hosts:
-          - host: &host "radarr.homelab.${SECRET_DOMAIN}"
+          - host: &host "radarr.${SECRET_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix
