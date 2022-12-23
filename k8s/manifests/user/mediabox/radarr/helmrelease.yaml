@@ -54,7 +54,7 @@ spec:
                 pathType: Prefix
             tls:
               - hosts:
-                  - "radarr.${SECRET_DOMAIN}"
+                  - *host
                 secretName: &tls tls.radarr
 
       api:
