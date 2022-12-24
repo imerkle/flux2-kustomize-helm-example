@@ -70,10 +70,10 @@ spec:
             paths:
               - path: /api
                 pathType: Prefix
-            tls:
-              - hosts:
-                  - *host
-                secretName: *tls
+        tls:
+          - hosts:
+              - *host
+            secretName: *tls
 
     persistence:
       config:

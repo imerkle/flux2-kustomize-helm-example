@@ -55,7 +55,7 @@ spec:
           paths:
             - path: /
               pathType: Prefix
-          tls:
-            - hosts:
-                - *host
-              secretName: &tls tls.dex
+      tls:
+        - hosts:
+            - *host
+          secretName: &tls tls.dex
