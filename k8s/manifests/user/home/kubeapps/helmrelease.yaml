@@ -32,7 +32,7 @@ spec:
       clientSecret: "kubeappsClientSecret"
       cookieSecret: "bm90LWdvb2Qtc2VjcmV0Cg=="
       extraFlags:
-        - --oidc-issuer-url="https://dex.${SECRET_DOMAIN}"
+        - --oidc-issuer-url='https://dex.${SECRET_DOMAIN}'
         # IMPORTANT: We are overwriting the scope option to include the workload clusters' clientids in the audience.
         - --scope=openid email groups
         # TODO: Update to provide the dex ca via --provider-ca-file and mounting etc.
