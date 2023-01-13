@@ -40,9 +40,9 @@ spec:
       SMTP_SSL: "true"
       TZ: "Europe/Berlin"
       WEBSOCKET_ADDRESS: 0.0.0.0
-    envFrom:
-      - secretRef:
-          name: vaultwarden
+    # envFrom:
+    #   - secretRef:
+    #       name: vaultwarden
     # -- Configures service settings for the chart. Normally this does not need to be modified.
     # @default -- See values.yaml
     service:
