@@ -12,7 +12,7 @@ spec:
       version: 0.22.48
       sourceRef:
         kind: HelmRepository
-        name: devtroncd
+        name: devtron
         namespace: flux-system
       interval: 5m
   install:
