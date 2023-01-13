@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: devtron-operator
-      version: 0.10.7
+      version: 0.22.48
       sourceRef:
         kind: HelmRepository
         name: devtron
