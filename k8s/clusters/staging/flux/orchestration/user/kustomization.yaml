@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - ./mediabox.yaml
   - ./home.yaml
+  - ./security.yaml
