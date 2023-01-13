@@ -8,7 +8,7 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: devtron
+      chart: devtron-operator
       version: 0.10.7
       sourceRef:
         kind: HelmRepository
