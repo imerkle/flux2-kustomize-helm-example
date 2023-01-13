@@ -18,13 +18,3 @@ spec:
   interval: 30m
   url: https://charts.doca.cloud/charts/
   timeout: 3m
----
-apiVersion: source.toolkit.fluxcd.io/v1beta2
-kind: HelmRepository
-metadata:
-  name: devtron
-  namespace: flux-system
-spec:
-  interval: 30m
-  url: https://helm.devtron.ai
-  timeout: 3m
