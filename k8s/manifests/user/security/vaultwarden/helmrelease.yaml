@@ -34,7 +34,7 @@ spec:
       DATA_FOLDER: "config"
       DOMAIN: https://pw.${SECRET_DOMAIN}
       SIGNUPS_ALLOWED: "true"
-      SMTP_HOST: smtp-relay.default.svc.cluster.local.
+      SMTP_HOST: smtp-relay.mail.svc.cluster.local.
       SMTP_FROM: vaultwarden@${SECRET_DOMAIN}
       SMTP_FROM_NAME: vaultwarden
       SMTP_PORT: 2525
