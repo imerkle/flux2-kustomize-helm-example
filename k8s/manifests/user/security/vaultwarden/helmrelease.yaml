@@ -35,7 +35,8 @@ spec:
       DOMAIN: https://pw.${SECRET_DOMAIN}
       SIGNUPS_ALLOWED: "true"
       SMTP_FROM_NAME: Vaultwarden
-      SMTP_HOST: mail.${SECRET_FAM_DOMAIN}
+      SMTP_HOST: mail.${SECRET_DOMAIN}
+      SMTP_FROM: vaulwarden_admin
       SMTP_PORT: 587
       SMTP_SSL: "true"
       TZ: "Europe/Berlin"
