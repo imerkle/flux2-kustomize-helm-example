@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
   - helm-release.yaml
   - smtp-relay-secret.sops.yaml
-namespace: selfhosted
+namespace: mail
 configMapGenerator:
   - name: smtp-relay
     files:
