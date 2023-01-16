@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: smtp-relay
+    namespace: mail
+type: Opaque
+stringData:
+    SMTP_USERNAME: ENC[AES256_GCM,data:vTGsk78CB9U6KlXUr2USSR/Igtw=,iv:1zM9y1107+p0b5q7cC/oGhRSiNGMo9w3GM690qHlt8Y=,tag:kiwfv4gY2NTQrt+uGSr4iQ==,type:str]
+    SMTP_PASSWORD: ENC[AES256_GCM,data:eBK5PQ9QKkiiJyNMHoWGfyprKjyAg99ElpjB73BC68dbt7E4NaWwCc39wbM=,iv:R/d1g7JKWfNoZtVD/E/eDiEWgu9wtyGF9G8fCR+glUg=,tag:oHy5akP7jtOlAwVdxyXzPA==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1r3yhxz3wdwaut5dnfqc25g7u7xd6k53dfc8fcykaj09vru7ldgwsytc5u9
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBselNaYTRuNmNoT1JxQjNh
+            MU1LZ293bjBXVE92dVJIRy9QdkM5TUplbm5rCkR1cmFpMHhyN0RpZVBkeXFBeDBl
+            RHZFY2s2ZjllRnV0VG9QcXZhUnJGaWMKLS0tIEMvckxRWktYb3I5OWhCYXJTNW44
+            OWZveWtSOXhFTFg2QVpxZm9sMXU3a2MKh+8PO8fNl5tM4Yv1WozQ2suv83OQU7Xs
+            pgpvgjCYEkXCTpBKCoc44xo20eXISyH6vXO3HBo43kKnogQ0IqIcQg==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-01-16T18:33:45Z"
+    mac: ENC[AES256_GCM,data:446cbYZz0sKfAyvWza9C7r6lMfB8Qmy9w4mnYMFUE/D7IqHelrysn2rDNLpPonM+kBGxJp/BkzneaNJ58sZdj+eOw61glH1hsYdreybD23OxunrU1UTl8WvTkNUl5hBeQGFv4baJ3IIUOlPhYuv9vyl1Q1hD8is+y0e//YyxBIc=,iv:fowiKrJQHE/P+jEFddWv4QKsFX+IbMK/vvrsdbW07Dg=,tag:/K64IpD8Ly9ZKMEFJKuJ/Q==,type:str]
+    pgp: []
+    encrypted_regex: ((?i)(pass|secret($|[^N])|key|token|^data$|^stringData))
+    version: 3.7.3
