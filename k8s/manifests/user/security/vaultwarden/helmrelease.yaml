@@ -38,7 +38,7 @@ spec:
       SMTP_FROM: vaultwarden@${SECRET_DOMAIN}
       SMTP_FROM_NAME: vaultwarden
       SMTP_PORT: 2525
-      SMTP_SECURITY: "off"
+      SMTP_SECURITY: "starttls"
       TZ: "Europe/Berlin"
       WEBSOCKET_ADDRESS: 0.0.0.0
     # envFrom:
