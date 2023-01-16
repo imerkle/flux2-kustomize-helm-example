@@ -8,7 +8,7 @@ namespace: mail
 configMapGenerator:
   - name: smtp-relay
     files:
-      - config/maddy.conf
+      - maddy/maddy.conf
 generatorOptions:
   disableNameSuffixHash: true
   annotations:
